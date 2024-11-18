@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+  }
+  
+  header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+  }
+  
+  header h1 {
+    margin-bottom: 0.5rem;
+  }
+  
+  section {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  #projects .project {
+    margin: 1rem 0;
+  }
+  
+  #projects .project a {
+    color: #0066cc;
+    text-decoration: none;
+  }
+  
+  form {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  form input, form textarea, form button {
+    margin: 0.5rem 0;
+    padding: 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  form button {
+    background: #333;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background: #333;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+  }
+  
+  #about {
+    padding: 70px;
+    background-image: url("./img/pexels-harold-vasquez-853421-2653362.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 60vh;
+    z-index: 1;
+    color: white;
+    text-align: justify;
+  }
+  
+  #about h2 {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  #about p {
+    margin: 0 100px; /* Ensures equal margins on left and right */
+    text-align: justify;
+  }
+  
+  /* Media query for tablets */
+  @media (max-width: 768px) {
+    #about {
+      padding: 50px;
+    }
+  
+    #about p {
+      margin: 0 50px;
+    }
+  }
+  
+  /* Media query for mobile devices */
+  @media (max-width: 480px) {
+    #about {
+      padding: 30px;
+    }
+  
+    #about p {
+      margin: 0 20px;
+    }
+  }
+  
+  /* Projects Section */
+  .portfolio h2 {
+    margin: 40px 0;
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: bisque;
+  }
+  
+  .projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 40px 0;
+  }
+  
+  .project-x {
+    background-size: cover;
+    background-position: center;
+    width: 400px;
+    height: 300px;
+    border-radius: 5%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    margin: 20px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  
+  .project-x:hover {
+    transform: scale(1.05);
+    /* Slight zoom on hover for a better effect */
+  }
+  
+  .project1 {
+    background-image: url('./img/portfolio/scaled.jpg');
+  }
+  
+  .project2 {
+    background-image: url('./img/portfolio/zz-fotor-20240311132651.png');
+  }
+  
+  .project3 {
+    background-image: url('./img/portfolio/netl.jpg');
+  }
+  
+  .project4 {
+    background-image: url('./img/portfolio/leetn_resized.png');
+  }
+  
+  /* Overlay Styling */
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.3rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 1;
+  }
+  
+  .project-x:hover .overlay {
+    opacity: 1;
+    /* Make the overlay visible on hover */
+  }
+  
+  /* Ensure images are clearly visible when not hovered */
+  .project-x {
+    filter: brightness(1.2);
+  }
+  
+  .project-x:hover {
+    filter: brightness(0.8);
+    /* Dim the image slightly to highlight the overlay */
+  }
+  
+  /* Project Icons */
+  .proj_icon {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+  }
+  
+  .proj_icon a i {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .proj_icon a:hover i {
+    transform: scale(1.2);
+    /* Slight enlargement for icons on hover */
+    color: bisque;
+    /* Change icon color on hover */
+  }
+  
+  /* Media Queries for Responsiveness */
+  
+  /* Small devices (phones, 600px and down) */
+  @media (max-width: 600px) {
+    .projects {
+        flex-direction: column;
+        align-items: center;
+    }
+  
+    .project-x {
+        width: 90%;
+    }
+  
+    .project-x:hover {
+        transform: none;
+    }
+  
+    .proj_icon {
+        margin-top: 10px;
+    }
+  
+    .proj_icon a i {
+        font-size: 1.2rem;
+    }
+  }
+  
+  /* Medium devices (tablets, 600px to 768px) */
+  @media (min-width: 601px) and (max-width: 768px) {
+    .project-x {
+        width: 45%;
+    }
+  
+    .proj_icon a i {
+        font-size: 1.3rem;
+    }
+  }
+  
+  /* Large devices (desktops, 769px and up) */
+  @media (min-width: 769px) {
+    .project-x {
+        width: 30%;
+    }
+  
+    .proj_icon a i {
+        font-size: 1.5rem;
+    }
+  }
+  
